@@ -3,5 +3,99 @@
   "version": 1,
   "newProjectRoot": "myProjects",
   "projects": {
+    "sikhism": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "myProjects/sikhism",
+      "sourceRoot": "myProjects/sikhism/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/sikhism",
+            "index": "myProjects/sikhism/src/index.html",
+            "main": "myProjects/sikhism/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "myProjects/sikhism/tsconfig.app.json",
+            "assets": [
+              "myProjects/sikhism/src/favicon.ico",
+              "myProjects/sikhism/src/assets"
+            ],
+            "styles": [
+              "myProjects/sikhism/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "sikhism:build:production"
+            },
+            "development": {
+              "browserTarget": "sikhism:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "sikhism:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "myProjects/sikhism/tsconfig.spec.json",
+            "assets": [
+              "myProjects/sikhism/src/favicon.ico",
+              "myProjects/sikhism/src/assets"
+            ],
+            "styles": [
+              "myProjects/sikhism/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }
