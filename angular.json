@@ -93,6 +93,190 @@
           }
         }
       }
+    },
+    "interviewprep": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "myProjects/interviewprep",
+      "sourceRoot": "myProjects/interviewprep/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/interviewprep",
+            "index": "myProjects/interviewprep/src/index.html",
+            "browser": "myProjects/interviewprep/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "myProjects/interviewprep/tsconfig.app.json",
+            "assets": [
+              "myProjects/interviewprep/src/favicon.ico",
+              "myProjects/interviewprep/src/assets"
+            ],
+            "styles": [
+              "myProjects/interviewprep/src/styles.css"
+            ],
+            "scripts": [],
+            "server": "myProjects/interviewprep/src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "myProjects/interviewprep/server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "interviewprep:build:production"
+            },
+            "development": {
+              "buildTarget": "interviewprep:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "interviewprep:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "myProjects/interviewprep/tsconfig.spec.json",
+            "assets": [
+              "myProjects/interviewprep/src/favicon.ico",
+              "myProjects/interviewprep/src/assets"
+            ],
+            "styles": [
+              "myProjects/interviewprep/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "preperation": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "myProjects/preperation",
+      "sourceRoot": "myProjects/preperation/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/preperation",
+            "index": "myProjects/preperation/src/index.html",
+            "main": "myProjects/preperation/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "myProjects/preperation/tsconfig.app.json",
+            "assets": [
+              "myProjects/preperation/src/favicon.ico",
+              "myProjects/preperation/src/assets"
+            ],
+            "styles": [
+              "myProjects/preperation/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "preperation:build:production"
+            },
+            "development": {
+              "browserTarget": "preperation:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "preperation:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "myProjects/preperation/tsconfig.spec.json",
+            "assets": [
+              "myProjects/preperation/src/favicon.ico",
+              "myProjects/preperation/src/assets"
+            ],
+            "styles": [
+              "myProjects/preperation/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "cli": {
