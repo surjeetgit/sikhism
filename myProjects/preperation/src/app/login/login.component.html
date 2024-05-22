@@ -1,0 +1,34 @@
+<p style="text-align: center;">login works!</p>
+
+<div style="text-align: center;">
+    <form #login="ngForm" (ngSubmit)="submit(login)">
+        <div class="form-group">
+            <label for="firstname">First Name</label><br>
+            <input #name="ngModel" required="true" minlength="2" maxlength="5" type="text" name="firstname" class="form-control" ngModel><br>
+            <div *ngIf="name.touched && name.invalid" class="form-text text-danger">
+                <p *ngIf="name.errors?.['required']">firstname required!!</p>
+                <p *ngIf="name.errors?.['minlength']">Sorry! short firstname</p>
+            </div>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="lastname">Last Name</label><br>
+            <input type="text" name="lastname" class="form-control" ngModel><br>
+        </div>
+
+        <pre></pre>
+        <div class="form-group">
+            <label for="email">Email</label><br>
+            <input type="text" name="email" class="form-control" ngModel><br>
+        </div>
+
+        <pre></pre>
+        <div class="form-group">
+            <label for="password">Password</label><br>
+            <input type="text" name="password" class="form-control" ngModel><br>
+        </div>
+
+        <pre></pre>
+        <button type="submit">Submit</button>
+    </form>
+</div>
