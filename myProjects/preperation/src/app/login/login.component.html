@@ -4,7 +4,8 @@
     <form #login="ngForm" (ngSubmit)="submit(login)">
         <div class="form-group">
             <label for="firstname">First Name</label><br>
-            <input #name="ngModel" required="true" minlength="2" maxlength="5" type="text" name="firstname" class="form-control" ngModel><br>
+            <input #name="ngModel" required="true" minlength="2" maxlength="5" type="text" name="firstname"
+                class="form-control" ngModel><br>
             <div *ngIf="name.touched && name.invalid" class="form-text text-danger">
                 <p *ngIf="name.errors?.['required']">firstname required!!</p>
                 <p *ngIf="name.errors?.['minlength']">Sorry! short firstname</p>
@@ -15,7 +16,6 @@
             <label for="lastname">Last Name</label><br>
             <input type="text" name="lastname" class="form-control" ngModel><br>
         </div>
-
         <pre></pre>
         <div class="form-group">
             <label for="email">Email</label><br>
@@ -30,5 +30,22 @@
 
         <pre></pre>
         <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div>
+    <form #course="ngForm" (ngSubmit)="submit2(course)">
+        <div class="form-group">
+            <label for="course">Course Name</label>
+            <input #name2="ngModel" type="text" required="true" minlength="2" maxlength="5" name="coursename" class="form-control" ngModel>
+            <div *ngIf="name2.touched">
+            <p *ngIf="name2.errors?.['required']" class="form-text text-danger">
+                Pleae enter the course name!
+            </p>
+            <p *ngIf="name2.errors?.['minlength']">Sorry! short course name</p>
+            </div>
+        </div>
+        
+        <button type="submit">submit</button>
     </form>
 </div>
