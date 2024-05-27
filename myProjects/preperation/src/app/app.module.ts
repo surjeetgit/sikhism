@@ -8,17 +8,20 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SurtestService } from './surtest.service';
 import { StudentdetailsComponent } from './studentdetails/studentdetails.component';
-
+import { HttpclientdemoComponent } from './httpclientdemo/httpclientdemo.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    StudentdetailsComponent
+    StudentdetailsComponent,
+    HttpclientdemoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [SurtestService],
   bootstrap: [AppComponent]
