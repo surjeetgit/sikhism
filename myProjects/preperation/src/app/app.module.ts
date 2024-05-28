@@ -10,12 +10,15 @@ import { SurtestService } from './surtest.service';
 import { StudentdetailsComponent } from './studentdetails/studentdetails.component';
 import { HttpclientdemoComponent } from './httpclientdemo/httpclientdemo.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MobiledetailsComponent } from './mobiledetails/mobiledetails.component';
+import { MobiledataserviceService } from './mobiledataservice.service';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     StudentdetailsComponent,
-    HttpclientdemoComponent
+    HttpclientdemoComponent,
+    MobiledetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [SurtestService],
+  providers: [SurtestService, MobiledataserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
