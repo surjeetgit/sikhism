@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MobiledataserviceService } from '../mobiledataservice.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { MobiledataserviceService } from '../mobiledataservice.service';
 export class MobiledetailsComponent {
 
   public mobiledata: any = [];
+  @Input('parentData') public name: string="";
+  @Output() public childEvent = new EventEmitter();
 
   constructor(private _mobiledataservice: MobiledataserviceService) { }
   
@@ -21,4 +23,7 @@ export class MobiledetailsComponent {
       });
   };
 
+  fireEvent() {
+    this.childEvent.emit("Hey expert!");
+  }
 }

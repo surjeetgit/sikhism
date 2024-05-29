@@ -2,7 +2,9 @@
 
 <h2>This is interpolation binding</h2>
 <h3>My name is : {{name}}</h3><br>
-
+<h1>
+    hkjhkj = {{message}}
+</h1>
 <h2>This is property binding</h2>
 <button (click)="onClick()">Click Me!</button><br>
 
@@ -12,5 +14,5 @@
 
 <app-login></app-login>
 <app-httpclientdemo></app-httpclientdemo>
-<app-mobiledetails></app-mobiledetails>
+<app-mobiledetails (childEvent)="message=$event" [parentData]="parentValue"></app-mobiledetails>
 <router-outlet></router-outlet>

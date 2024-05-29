@@ -1,4 +1,7 @@
 <h1>Mobile details</h1>
+<h2>Hello {{name}}</h2>
 <div *ngFor="let md of mobiledata">
     {{md.id}}, {{md.name}}, {{md.color}}, {{md.capacity}}
 </div>
+<button type="button" (click)="fireEvent()">Send data to parent component</button>
+

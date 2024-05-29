@@ -9,7 +9,7 @@ import { SurtestService } from '../surtest.service';
 export class StudentdetailsComponent {
 
   public studentdetails: any = []
-
+  
   constructor(private _surtestService: SurtestService) { }
   
   ngOnInit() {

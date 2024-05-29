@@ -9,7 +9,8 @@ export class AppComponent {
   title = 'preperation';
   name: string = "surjeet";
   textVal: string = "ttttttt";
-
+  public parentValue: string = "surjeet singh";
+  public message="";
   onClick() {
     console.log("how are you?");
   }
